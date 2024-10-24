@@ -40,11 +40,11 @@ class TeleopPublisher(Node):
         self.publish_message()
 
     def turn_left(self, event):
-        self.angle = -0.5
+        self.angle = 0.5
         self.publish_message()
 
     def turn_right(self, event):
-        self.angle = 0.5
+        self.angle = -0.5
         self.publish_message()
 
     def straighten_angle(self, event):
@@ -62,7 +62,7 @@ class TeleopPublisher(Node):
 def main(args=None):
     rclpy.init(args=args)
 
-    teleop_publisher = ServoCtrlMsg()
+    teleop_publisher = TeleopPublisher()
 
     rclpy.spin(teleop_publisher)
 
