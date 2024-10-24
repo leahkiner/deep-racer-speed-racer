@@ -62,7 +62,7 @@ class TeleopPublisher(Node):
 def main(args=None):
     rclpy.init(args=args)
 
-    teleop_publisher = ServoCtrlMsg()
+    teleop_publisher = TeleopPublisher()
 
     rclpy.spin(teleop_publisher)
 
