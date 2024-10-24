@@ -27,6 +27,8 @@ class TeleopPublisher(Node):
         keyboard.on_release_key('a', self.straighten_angle)
         keyboard.on_release_key('d', self.straighten_angle)
 
+        self.get_logger().info(f'Please use "w", "a", "s", and "d" to move the deepracer!')
+
     def forward(self, event):
         self.throttle = 0.5
         self.publish_message()
