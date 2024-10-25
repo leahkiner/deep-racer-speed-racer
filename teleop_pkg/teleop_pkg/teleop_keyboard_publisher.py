@@ -30,11 +30,11 @@ class TeleopPublisher(Node):
         self.get_logger().info(f'Please use "w", "a", "s", and "d" to move the deepracer!')
 
     def forward(self, event):
-        self.throttle = 0.5
+        self.throttle = 1.0
         self.publish_message()
 
     def reverse(self, event):
-        self.throttle = -0.5
+        self.throttle = -1.0
         self.publish_message()
 
     def stop_throttle(self, event):
@@ -42,11 +42,11 @@ class TeleopPublisher(Node):
         self.publish_message()
 
     def turn_left(self, event):
-        self.angle = -0.5
+        self.angle = 1.0
         self.publish_message()
 
     def turn_right(self, event):
-        self.angle = 0.5
+        self.angle = -1.0
         self.publish_message()
 
     def straighten_angle(self, event):
